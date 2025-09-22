@@ -17,9 +17,9 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// |  TAB |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &kp ESC   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
@@ -30,13 +30,13 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  ESC |     |  UP | F11 | F12 |     |   |  7  |  8  |  9  |  -  | PRNT|  DEL |
+// |  TAB | LFT | DWN | RGT |     |     |   |  4  |  5  |  6  |  +  |  *  |      |
+// | CTRL |  1  |  2  |  3  |  4  |  5  |   |  1  |  2  |  3  |  .  |  /  |      |
+//                    | GUI |     | SPC |   | ENT |     |  0  |
                         bindings = <
-   &kp ESC    &trans   &kp UP       &kp N3       &kp N4       &kp N5         &kp N7   &kp N8   &kp N9 &kp MINUS    &kp PRINTSCREEN &kp DELETE
-   &mt LSHIFT TAB    &kp LEFT &kp DOWN &kp RIGHT &bt BT_SEL 3 &bt BT_SEL 4   &kp N4 &kp N5 &kp N6 &kp PLUS &kp KP_MULTIPLY &trans
+   &kp ESC    &trans   &kp UP       &kp F11       &kp F12       &trans         &kp N7   &kp N8   &kp N9 &kp MINUS    &kp PRINTSCREEN &kp DELETE
+   &mt LSHIFT TAB    &kp LEFT &kp DOWN &kp RIGHT &trans &trans   &kp N4 &kp N5 &kp N6 &kp PLUS &kp KP_MULTIPLY &trans
    &kp LCTRL  &kp N1   &kp N2       &kp N3       &kp N4       &kp N5         &kp N1   &kp N2   &kp N3 &trans    &trans &trans
                                     &kp LGUI     &trans       &kp SPACE      &kp RET  &mo 3   &kp N0
                         >;
@@ -45,21 +45,26 @@
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+// | CTRL | F1  | F2  | F3  | F4  | F5  |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT | F6  | F7  | F8  | F9  | F10 |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp  ESC  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &mt LSHIFT TAB &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+   &mt LSHIFT TAB &kp F1   &kp F2 &kp F3   &kp F4   &kp F5      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+   &kp LCTRL &kp F6   &kp F7 &kp F8   &kp F9   &kp F10      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
                              &kp LGUI &mo 3   &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };
                 fourth_layer {
+// -----------------------------------------------------------------------------------------
+// |  ESC |     | PGU |     |     |     |   |     |     |     | MUTE| VO- | VO+  |
+// |  TAB | HOME| PGD | END |     |     |   |     |     |     |     |     |      |
+// | CTRL | BT_C| BT1 | BT2 | BT3 | BT4 |   | BT5 | TGL |     |     |     | CAPS |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
                     bindings = <
-                            &kp ESC   &kp EXCL &kp PG_UP &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &trans &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP
-                            &mt LSHIFT TAB   &kp HOME   &kp PG_DN     &kp END   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-                           &kp LCTRL  &bt BT_CLR   &bt BT_SEL 0       &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3        &bt BT_SEL 4 &out OUT_TOG    &kp N3 &trans    &trans &kp CAPSLOCK
+                            &kp ESC   &trans &kp PG_UP &trans &trans &trans   &trans &trans  &trans &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP
+                            &mt LSHIFT TAB   &kp HOME   &kp PG_DN     &kp END   &trans   &trans      &trans &trans &trans        &trans &trans &trans
+                           &kp LCTRL  &bt BT_CLR   &bt BT_SEL 0       &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3        &bt BT_SEL 4 &out OUT_TOG    &trans &trans    &trans &kp CAPSLOCK
                             &kp LGUI  &trans   &kp SPACE  &kp RET  &trans   &kp RALT
                         >;
                 };
